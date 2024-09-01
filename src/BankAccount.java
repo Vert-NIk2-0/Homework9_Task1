@@ -6,9 +6,9 @@ public class BankAccount {
     public void withdraw(double amount) {
         if (amount > balance) {
             try {
-                throw new InsufficientFundsException();
+                throw new InsufficientFundsException("У вас недостаточно средств!");
             }catch (InsufficientFundsException e) {
-                System.out.println("У вас недостаточно средств!");
+                System.out.println(e.getMessage());
             }
         }else {
             balance -= amount;
